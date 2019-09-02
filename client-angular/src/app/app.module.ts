@@ -14,11 +14,12 @@ import { CarEditComponent } from './components/car-edit/car-edit.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FilterPipe } from './pipes/filter.pipe';
+import { NavIndexComponent } from './components/nav-index/nav-index.component';
+import { CarouselIndexComponent } from './components/carousel-index/carousel-index.component';
 
 // Bootrstrap
 //import { AlertModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     CarNewComponent,
     CarEditComponent,
     CarDetailComponent,
-    FilterPipe
+    FilterPipe,
+    NavIndexComponent,
+    CarouselIndexComponent
   ],
   imports: [
     BrowserModule,

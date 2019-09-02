@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../../models/user';
-import { UserService } from '../../services/user.service'; 
+import { UserService } from '../../services/user.service';
 import { Car } from '../../models/car';
 import { CarService } from '../../services/car.service'; 
 
 @Component({
 	selector: 'default',
 	templateUrl: './default.component.html',
+	styleUrls: ['./default.component.css'],
 	providers: [UserService, CarService]
 })
 export class DefaultComponent implements OnInit{
