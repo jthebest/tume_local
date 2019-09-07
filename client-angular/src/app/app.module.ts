@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
+import { AppRoutingModule } from './app-routing.module';
+import { FilterPipe } from './pipes/filter.pipe';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -12,10 +16,9 @@ import { DefaultComponent } from './components/default/default.component';
 import { CarNewComponent } from './components/car-new/car-new.component';
 import { CarEditComponent } from './components/car-edit/car-edit.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
-import { AppRoutingModule } from './app-routing.module';
-import { FilterPipe } from './pipes/filter.pipe';
 import { NavIndexComponent } from './components/nav-index/nav-index.component';
 import { CarouselIndexComponent } from './components/carousel-index/carousel-index.component';
+import { MultiselectDropdownComponent } from './components/multiselect-dropdown/multiselect-dropdown.component';
 
 // Bootrstrap
 //import { AlertModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -32,13 +35,15 @@ import { CarouselIndexComponent } from './components/carousel-index/carousel-ind
     CarDetailComponent,
     FilterPipe,
     NavIndexComponent,
-    CarouselIndexComponent
+    CarouselIndexComponent,
+    MultiselectDropdownComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    routing //,
+    routing,
+    NgMultiSelectDropDownModule.forRoot() //,
 //    AlertModule.forRoot(),
  //   BrowserAnimationsModule,
 //    CollapseModule.forRoot(),

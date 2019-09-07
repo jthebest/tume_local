@@ -6,7 +6,6 @@
 <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" name="filterCars" [(ngModel)]="filterCars" type="search" placeholder="Search" aria-label="Search" >
 	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	<button md-raised-button *ngFor="let car of cars | filter:filterCars" (click)="transform(filter)"></button>
   </form>
 <div class="col-md-12" *ngIf="cars">
 	<h2>{{title}}</h2>
