@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Helpers\JwtAuth;
-use App\Car;
+use App\Model\Car;
 
 class CarController extends Controller
 {
