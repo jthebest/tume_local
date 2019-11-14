@@ -10,7 +10,7 @@ class Creditos_historico extends Model
 
     // Relación
     public function persona(){
-    	return $this->belongsTo('App\Persona', 'idpersona');
+    	return $this->belongsTo('App\Persona', 'id_solicitud');
     }
 
     // Relación
