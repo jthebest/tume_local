@@ -9,7 +9,7 @@
 		No te has identificado !!
 	</div>
 
-	<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="col-md-5">
+	<form #loginFormy="ngForm" (ngSubmit)="onSubmit(loginFormy)" class="col-md-5">
 
 		<p>
 			<label for="email">Email</label>
@@ -27,6 +27,6 @@
 			</span>
 		</p>
 
-		<input type="submit" value="Entrar" class="btn btn-primary" [disabled]="!loginForm.form.valid" />
+		<input type="submit" value="Entrar" class="btn btn-primary" [disabled]="!loginFormy.form.valid" />
 	</form>
 </div>
