@@ -11,17 +11,17 @@ class Ranking_profesional extends Model
 
     // Relación
     public function persona(){
-    	return $this->belongsTo('App\Persona', 'idpersona');
+    	return $this->belongsTo('App\Model\Persona', 'idpersona');
     }
     
     // Relación
     public function personacalificador(){
-    	return $this->belongsTo('App\Persona', 'idcalificador');
+    	return $this->belongsTo('App\Model\Persona', 'idcalificador');
     }
 
     // Relación
     public function solicitud_servicio(){
-        return $this->belongsTo('App\Solicitud_servicio', 'id_solicitud');
+        return $this->belongsTo('App\Model\Solicitud_servicio', 'id_solicitud');
     }
 
 }

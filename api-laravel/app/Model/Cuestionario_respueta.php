@@ -11,17 +11,17 @@ class Cuestionario_respuesta extends Model
 
     // Relación
     public function item(){
-        return $this->belongsTo('App\Cuestionario_item', 'iditem');
+        return $this->belongsTo('App\Model\Cuestionario_item', 'iditem');
     }
         
     // Relación
     public function persona(){
-    	return $this->belongsTo('App\persona', 'idpersona');
+    	return $this->belongsTo('App\Model\persona', 'idpersona');
     }
 
     // Relación
         public function servicio(){
-            return $this->belongsTo('App\Servicio', 'idservicio');
+            return $this->belongsTo('App\Model\Servicio', 'idservicio');
         }
 
 }

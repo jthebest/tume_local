@@ -11,7 +11,7 @@ class Solicitud_servicio_personalizado extends Model
 
     // Relación
     public function soliciutd_servicio(){
-    	return $this->belongsTo('App\Solicitud_servicio', 'id_solicitud_servicio');
+    	return $this->belongsTo('App\Model\Solicitud_servicio', 'id_solicitud_servicio');
     }
 
 

@@ -10,11 +10,11 @@ class Propuesta_servicio extends Model
 
     // Relación
     public function solicitu_servicio(){
-    	return $this->belongsTo('App\Solicitud_servicio', 'id_solicitud');
+    	return $this->belongsTo('App\Model\Solicitud_servicio', 'id_solicitud');
     }
 
     // Relación
     public function persona(){
-    	return $this->belongsTo('App\Persona', 'id_profesional');
+    	return $this->belongsTo('App\Model\Persona', 'id_profesional');
     }
 }

@@ -12,13 +12,13 @@ class Servicio_profesional extends Model
 
     // Relación
     public function persona(){
-    	return $this->belongsTo('App\Persona', 'idpersona');
+    	return $this->belongsTo('App\Model\Persona', 'idpersona');
     }
 
     
     // Relación
     public function servicio(){
-    	return $this->belongsTo('App\Servicio', 'idservicio');
+    	return $this->belongsTo('App\Model\Servicio', 'idservicio');
     }
 
 

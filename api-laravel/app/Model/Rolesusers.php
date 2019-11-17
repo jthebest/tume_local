@@ -12,7 +12,7 @@ class Rolesusers extends Model
 
     // Relación
     public function personacalificador(){
-    	return $this->belongsTo('App\Roles', 'idrole');
+    	return $this->belongsTo('App\Model\Roles', 'idrole');
     }
 
 

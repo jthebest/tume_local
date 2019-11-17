@@ -11,7 +11,7 @@ class Cuestionario extends Model
 
     // Relación
     public function servicio(){
-    	return $this->belongsTo('App\Servicio', 'idservicio');
+    	return $this->belongsTo('App\Model\Servicio', 'idservicio');
     }
 
 

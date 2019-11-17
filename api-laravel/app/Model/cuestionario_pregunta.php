@@ -11,7 +11,7 @@ class Cuestionario_pregunta extends Model
 
     // Relación
     public function cuestionario(){
-    	return $this->belongsTo('App\Cuestionario_pregunta', 'idcuestionario');
+    	return $this->belongsTo('App\Model\Cuestionario_pregunta', 'idcuestionario');
     }
 
 

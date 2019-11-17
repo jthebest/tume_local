@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Helpers\JwtAuth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
-use App\Model\User;
+use App\User;
 
 class UserController extends Controller
 {

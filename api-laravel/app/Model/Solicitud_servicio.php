@@ -11,7 +11,7 @@ class Solicitud_servicio extends Model
 
     // Relación
     public function persona(){
-    	return $this->belongsTo('App\Persona', 'idpersona');
+    	return $this->belongsTo('App\Model\Persona', 'idpersona');
     }
 
 

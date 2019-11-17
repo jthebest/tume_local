@@ -11,12 +11,12 @@ class Solicitud_servicio_detalle extends Model
 
     // Relación
     public function soliciutd_servicio(){
-    	return $this->belongsTo('App\Solicitud_servicio', 'idsolicitud');
+    	return $this->belongsTo('App\Model\Solicitud_servicio', 'idsolicitud');
     }
 
     // Relación
     public function servicio(){
-    	return $this->belongsTo('App\Servicio', 'idservicio');
+    	return $this->belongsTo('App\Model\Servicio', 'idservicio');
     }
 
 

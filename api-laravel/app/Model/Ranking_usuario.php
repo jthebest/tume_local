@@ -11,12 +11,12 @@ class Ranking_usuario extends Model
 
     // Relación
     public function persona(){
-    	return $this->belongsTo('App\Persona', 'idpersona');
+    	return $this->belongsTo('App\Model\Persona', 'idpersona');
     }
     
     // Relación
     public function personacalificador(){
-    	return $this->belongsTo('App\Persona', 'idcalificador');
+    	return $this->belongsTo('App\Model\Persona', 'idcalificador');
     }
 
 }

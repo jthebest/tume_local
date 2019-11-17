@@ -10,7 +10,7 @@ class Permissionroles extends Model
 
     // Relación
     public function roles(){
-        return $this->belongsTo('App\Roles', 'idRole');
+        return $this->belongsTo('App\Model\Roles', 'idRole');
     }
 
 }
