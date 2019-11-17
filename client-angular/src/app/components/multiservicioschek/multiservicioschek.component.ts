@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 import { Servicio } from '../../models/servicio';
-import { ServicioService } from '../../services/servicio.service'; 
+import { ServicioService } from '../../services/servicio/servicio.service'; 
 
 
 @Component({

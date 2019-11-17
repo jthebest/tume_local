@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {GLOBAL} from './global';
-import {Car} from '../models/car';
+import {GLOBAL} from '../global';
+import {Car} from '../../models/car';
 
 @Injectable()
 export class CarService {

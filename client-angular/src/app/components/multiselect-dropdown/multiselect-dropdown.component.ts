@@ -1,7 +1,7 @@
     import { Component, OnInit } from '@angular/core';
     import { Router, ActivatedRoute, Params } from '@angular/router';
     import { Servicio } from '../../models/servicio';
-    import { ServicioService } from '../../services/servicio.service'; 
+    import { ServicioService } from '../../services/servicio/servicio.service'; 
  
     @Component({
         selector: 'app-multiselect-dropdown',

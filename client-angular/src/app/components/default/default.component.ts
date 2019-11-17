@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 import { Car } from '../../models/car';
-import { CarService } from '../../services/car.service'; 
+import { CarService } from '../../services/car/car.service'; 
 
 @Component({
 	selector: 'default',
