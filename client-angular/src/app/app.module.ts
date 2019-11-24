@@ -19,6 +19,8 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { NavIndexComponent } from './components/nav-index/nav-index.component';
 import { CarouselIndexComponent } from './components/carousel-index/carousel-index.component';
 import { MultiselectDropdownComponent } from './components/multiselect-dropdown/multiselect-dropdown.component';
+import { AgmComponent } from './components/agm/agm.component';
+import { AgmCoreModule } from '@agm/core';
 
 // Bootrstrap
 //import { AlertModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -36,18 +38,25 @@ import { MultiselectDropdownComponent } from './components/multiselect-dropdown/
     FilterPipe,
     NavIndexComponent,
     CarouselIndexComponent,
-    MultiselectDropdownComponent
+    MultiselectDropdownComponent,
+    AgmComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     routing,
+    AgmCoreModule.forRoot({
+      // please get your own API key here:
+      // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
+      apiKey: 'AIzaSyA9y9Vz5hHI-eFzckvkuBfr7kh1gRby1NE'
+    }),
     NgMultiSelectDropDownModule.forRoot() //,
 //    AlertModule.forRoot(),
  //   BrowserAnimationsModule,
 //    CollapseModule.forRoot(),
  //   BsDropdownModule.forRoot() 
+ 
   ],
   providers: [
     appRoutingProviders,
