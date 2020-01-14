@@ -1,14 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { UserService } from '../../services/user.service'; 
 import * as $ from 'jquery';
 
 @Component({
   selector: 'app-nav-index',
   templateUrl: './nav-index.component.html',
-  styleUrls: ['./nav-index.component.css']
+  styleUrls: ['./nav-index.component.css']//,
+ // providers: [UserService]
 })
-export class NavIndexComponent implements OnInit {
 
-  constructor() { }
+export class NavIndexComponent implements OnInit, DoCheck {
+  
+  public identity;
+  public token;
+  
+  constructor(
+		private _userService: UserService
+	){
+		this.identity = this._userService.getIdentity();
+		this.token = this._userService.getToken();
+	}
 
   ngOnInit() {
 
@@ -24,5 +35,10 @@ export class NavIndexComponent implements OnInit {
     //   });
      });
   }
+
+  ngDoCheck(){
+		this.identity = this._userService.getIdentity();
+		this.token = this._userService.getToken();
+	}
 
 }

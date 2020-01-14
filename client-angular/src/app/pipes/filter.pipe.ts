@@ -8,26 +8,25 @@ export class FilterPipe implements PipeTransform {
   //arg === null || arg === '' &&
 
   transform(value: any, arg: any): any {
-    const resultCars = [];
+    const resultNames = [];
 
-if (typeof arg === "undefined") {return   resultCars;} 
-if (arg === "") {return  resultCars ;} 
+if (typeof arg === "undefined") {return   resultNames;} 
+if (arg === "") {return  resultNames ;} 
 if (arg === null ) {return  value;} 
 if (  arg === '' ) { return   value;}
 
     if (  arg.lenght < 3 ){return value;}  
-  //  alert(arg);
-    
-    for (const car of value) {
-      if (car.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
-        resultCars.push(car);
-      };
+   
+    for (const jsonVal of value) {
+      if(jsonVal != "undefined" && jsonVal != null ) {
+        if(jsonVal != "undefined" && jsonVal != null )
+        {
+          if (jsonVal.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+            resultNames.push(jsonVal);
+          };
+        }
+      }
     };
-
-
-    return resultCars;
+    return resultNames;
   }
-
-
-
 }
