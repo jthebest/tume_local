@@ -19,7 +19,7 @@ if (  arg === '' ) { return   value;}
   //  alert(arg);
     
     for (const car of value) {
-      if (car.title.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+      if (car.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultCars.push(car);
       };
     };

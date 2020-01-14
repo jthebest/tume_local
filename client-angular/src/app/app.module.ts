@@ -21,6 +21,8 @@ import { CarouselIndexComponent } from './components/carousel-index/carousel-ind
 import { MultiselectDropdownComponent } from './components/multiselect-dropdown/multiselect-dropdown.component';
 import { AgmComponent } from './components/agm/agm.component';
 import { AgmCoreModule } from '@agm/core';
+import { SerachIndexComponent } from './components/serach-index/serach-index.component';
+import { SerachResultComponent } from './components/serach-result/serach-result.component';
 
 // Bootrstrap
 //import { AlertModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -39,7 +41,9 @@ import { AgmCoreModule } from '@agm/core';
     NavIndexComponent,
     CarouselIndexComponent,
     MultiselectDropdownComponent,
-    AgmComponent
+    AgmComponent,
+    SerachIndexComponent,
+    SerachResultComponent
   ],
   imports: [
     BrowserModule,
