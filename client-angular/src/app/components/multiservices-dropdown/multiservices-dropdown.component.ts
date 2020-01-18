@@ -4,14 +4,14 @@
     import { ServicioService } from '../../services/servicio/servicio.service'; 
  
     @Component({
-        selector: 'app-multiselect-dropdown',
-        templateUrl: './multiselect-dropdown.component.html',
-        styleUrls: ['./multiselect-dropdown.component.css'],
+        selector: 'app-multiservices-dropdown',
+        templateUrl: './multiservices-dropdown.component.html',
+        styleUrls: ['./multiservices-dropdown.component.css'],
         providers: [ServicioService]
     })
 
 
-    export class MultiselectDropdownComponent implements OnInit {
+    export class MultiservicesDropdownComponent implements OnInit {
 
         public servicios: Array<Servicio>;
 
@@ -47,7 +47,7 @@
         ngOnInit() {
             this.getServicios();
 
-            console.log('multiselect-dropdown.component cargado');
+            console.log('multiservices-dropdown.component cargado');
 
 
 
@@ -67,18 +67,25 @@
                 { id: 4, descripcion: 'Navsari' }
               ];*/
 
-
               this.dropdownSettings = {
-                singleSelection: false,
+                singleSelection: true,
+                defaultOpen: false,
+                closeDropDownOnSelection: true,
                 idField: 'id',
                 textField: 'descripcion',
-                selectAllText: 'Select All',
-                unSelectAllText: 'UnSelect All',
-                itemsShowLimit: 3,
-                allowSearchFilter: true,
-                clearSearchFilter: true,
-                enableCheckAll: false,
-                limitSelection: 2
+                limitSelection: 3,
+                searchPlaceholderText: 'Type Search',
+                noDataAvailablePlaceholderText: 'No data available',
+                disabledField: 'isDisabled',
+                itemsShowLimit: 9,
+                maxHeight: 197
+                //selectAllText: 'Select All',
+                //unSelectAllText: 'UnSelect All',
+               // itemsShowLimit: 1,
+               //showSelectedItemsAtTop: false,
+                //allowSearchFilter: true,
+               // clearSearchFilter: true,
+                //enableCheckAll: true,
               };
 
         }
@@ -150,18 +157,28 @@
         }
 */
 
+onSubmit(form){
+    console.log('submited');
+}
+
+
         onItemSelect(item: any) {
-            console.log('onItemSelect', item);
+            console.log('onItemSelect', item );
+            alert(item.id);
+            this._router.navigate(['home']);
         }
+        
         onSelectAll(items: any) {
             console.log('onSelectAll', items);
         }
         toogleShowFilter() {
+            console.log('toogleShowFilter');
             this.ShowFilter = !this.ShowFilter;
             this.dropdownSettings = Object.assign({}, this.dropdownSettings, { allowSearchFilter: this.ShowFilter });
         }
 
         handleLimitSelection() {
+            console.log('handleLimitSelection');
             if (this.limitSelection) {
                 this.dropdownSettings = Object.assign({}, this.dropdownSettings, { limitSelection: 2 });
             } else {

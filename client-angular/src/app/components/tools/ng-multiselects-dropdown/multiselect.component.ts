@@ -10,9 +10,9 @@ export const DROPDOWN_CONTROL_VALUE_ACCESSOR: any = {
 const noop = () => {};
 
 @Component({
-  selector: 'ng-multiselect-dropdown',
-  templateUrl: './multi-select.component.html',
-  styleUrls: ['./multi-select.component.scss'],
+  selector: 'ng-multiselects-dropdown',
+  templateUrl: './multi-selects.component.html',
+  styleUrls: ['./multi-selects.component.scss'],
   providers: [DROPDOWN_CONTROL_VALUE_ACCESSOR],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -35,7 +35,7 @@ export class MultiSelectComponent implements ControlValueAccessor {
     limitSelection: -1,
     clearSearchFilter: true,
     maxHeight: 197,
-    itemsShowLimit: 999999999999,
+    itemsShowLimit: 9999999,
     searchPlaceholderText: 'Search',
     noDataAvailablePlaceholderText: 'No data available',
     closeDropDownOnSelection: false,

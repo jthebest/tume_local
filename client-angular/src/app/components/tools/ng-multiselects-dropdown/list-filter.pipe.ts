@@ -17,6 +17,7 @@ export class ListFilterPipe implements PipeTransform {
         const resultCars  = [] ;
 
 
+      
         if (typeof filter === "undefined") {return  resultCars;}
 
         if (filter.text === "") {return  resultCars ;} 

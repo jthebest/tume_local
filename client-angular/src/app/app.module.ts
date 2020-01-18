@@ -18,7 +18,7 @@ import { CarEditComponent } from './components/car-edit/car-edit.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { NavIndexComponent } from './components/nav-index/nav-index.component';
 import { CarouselIndexComponent } from './components/carousel-index/carousel-index.component';
-import { MultiselectDropdownComponent } from './components/multiselect-dropdown/multiselect-dropdown.component';
+import { MultiservicesDropdownComponent } from './components/multiservices-dropdown/multiservices-dropdown.component';
 import { AgmComponent } from './components/agm/agm.component';
 import { AgmCoreModule } from '@agm/core';
 import { SerachIndexComponent } from './components/serach-index/serach-index.component';
@@ -40,7 +40,7 @@ import { SerachResultComponent } from './components/serach-result/serach-result.
     FilterPipe,
     NavIndexComponent,
     CarouselIndexComponent,
-    MultiselectDropdownComponent,
+    MultiservicesDropdownComponent,
     AgmComponent,
     SerachIndexComponent,
     SerachResultComponent
