@@ -3,13 +3,13 @@ import { UserService } from '../../services/user.service';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-nav-index',
-  templateUrl: './nav-index.component.html',
-  styleUrls: ['./nav-index.component.css']//,
+  selector: 'app-nav-header',
+  templateUrl: './nav-header.component.html',
+  styleUrls: ['./nav-header.component.css']//,
  // providers: [UserService]
 })
 
-export class NavIndexComponent implements OnInit, DoCheck {
+export class NavHeaderComponent implements OnInit, DoCheck {
   
   public identity;
   public token;

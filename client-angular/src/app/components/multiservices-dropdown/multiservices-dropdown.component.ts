@@ -161,11 +161,10 @@ onSubmit(form){
     console.log('submited');
 }
 
-
         onItemSelect(item: any) {
             console.log('onItemSelect', item );
-            alert(item.id);
-            this._router.navigate(['home']);
+                localStorage.setItem('token', item);
+                this._router.navigate(['home']);
         }
         
         onSelectAll(items: any) {
