@@ -51,14 +51,14 @@
 
 
 
-      /*      this.dropdownList = [
+            this.dropdownList = [
                 { id: 1, descripcion: 'Mumbai' , isLabel: false},
                 { id: 2, descripcion: 'Bangaluru' },
                 { id: 3, descripcion: 'Pune' },
                 { id: 4, descripcion: 'Navsari' },
                 { id: 5, descripcion: 'New Delhi' }
               ];
-  */
+  
 
 
 
@@ -66,19 +66,21 @@
                 { id: 3, descripcion: 'Pune' },
                 { id: 4, descripcion: 'Navsari' }
               ];*/
-
+// [ngModelOptions]="{standalone: true}" 
               this.dropdownSettings = {
+                itemsShowLimit: 2,
                 singleSelection: true,
                 defaultOpen: false,
                 closeDropDownOnSelection: true,
+                allowSearchFilter: true,
                 idField: 'id',
                 textField: 'descripcion',
-                limitSelection: 3,
                 searchPlaceholderText: 'Type Search',
                 noDataAvailablePlaceholderText: 'No data available',
                 disabledField: 'isDisabled',
-                itemsShowLimit: 9,
-                maxHeight: 197
+                maxHeight: 100,
+                standalone: true,
+               // limitSelection: 1
                 //selectAllText: 'Select All',
                 //unSelectAllText: 'UnSelect All',
                // itemsShowLimit: 1,
@@ -96,7 +98,7 @@
             //console.log(this.dropdownList);
             this._servicioService.getServicios().subscribe(
                 response => {
-                    this.dropdownList.push({ id: 2, descripcion: 'bueno' , isLabel: true});
+                    //this.dropdownList.push({ id: 2, descripcion: 'bueno' , isLabel: true});
                     if(response.status == 'success'){
                         this.servicios = response.servicios;
 
@@ -164,7 +166,7 @@ onSubmit(form){
         onItemSelect(item: any) {
             console.log('onItemSelect', item );
                 localStorage.setItem('token', item);
-                this._router.navigate(['home']);
+                this._router.navigate(['/']);
         }
         
         onSelectAll(items: any) {
