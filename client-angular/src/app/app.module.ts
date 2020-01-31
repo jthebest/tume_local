@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,7 @@ import { AgmComponent } from './components/agm/agm.component';
 import { AgmCoreModule } from '@agm/core';
 import { SerachIndexComponent } from './components/serach-index/serach-index.component';
 import { SerachResultComponent } from './components/serach-result/serach-result.component';
+import { GeneralComponent } from './components/tools/general/general.component';
 
 // Bootrstrap
 //import { AlertModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -43,11 +44,13 @@ import { SerachResultComponent } from './components/serach-result/serach-result.
     MultiservicesDropdownComponent,
     AgmComponent,
     SerachIndexComponent,
-    SerachResultComponent
+    SerachResultComponent,
+    GeneralComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     routing,
     AgmCoreModule.forRoot({
@@ -64,7 +67,8 @@ import { SerachResultComponent } from './components/serach-result/serach-result.
   ],
   providers: [
     appRoutingProviders,
-    AppRoutingModule
+    AppRoutingModule,
+    GeneralComponent
   ],
   bootstrap: [AppComponent]
 })

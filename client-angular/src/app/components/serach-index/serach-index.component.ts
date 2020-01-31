@@ -5,7 +5,11 @@ import { UserService } from '../../services/user.service';
 
 
 import { Servicio } from '../../models/servicio';
-import { ServicioService } from '../../services/servicio/servicio.service'; 
+import { ServicioService } from '../../services/servicio/servicio.service';
+import { FormGroup, FormBuilder, FormArray, ValidatorFn, FormControl } from '@angular/forms';
+import { of } from 'rxjs';
+import { GeneralComponent } from "../../components/tools/general/general.component";
+
 
 @Component({
 	selector: 'serach-index',
@@ -14,44 +18,128 @@ import { ServicioService } from '../../services/servicio/servicio.service';
 	providers: [UserService, ServicioService]
 })
 
-export class SerachIndexComponent implements OnInit{
+export class SerachIndexComponent implements OnInit {
 	public title: string;
 
 	public servicios: Array<Servicio>;
 	public token;
 
+	formy: FormGroup;
+	ordersData = [];
+
+	public checkboxList = [];
+
 	constructor(
 		private _route: ActivatedRoute,
 		private _router: Router,
 		private _userService: UserService,
+		private util: GeneralComponent,
 
 
-		private _servicioService: ServicioService
-	){
+		private _servicioService: ServicioService,
+		private formBuilder: FormBuilder
+	) {
 		this.title = 'Inicio';
 		this.token = this._userService.getToken();
+
+		this.formy = this.formBuilder.group({
+			orders: new FormArray([], minSelectedCheckboxes(1))
+		});
+		
+		//		of(this._servicioService.getServicios().subscribe((orders) => {
+		//			this.servicios = response.servicios;
+		//			this.ordersData = orders;
+		//			this.addCheckboxes();
+		//			}));
+
+		// synchronous orders
+		// this.orders = this.getOrders();
+		// this.addCheckboxes();
 	}
 
-	ngOnInit(){
-		console.log('search-index.component cargado correctamente!!');
-		this.getServicios();
+	ngOnInit() {
+		//this.getServicios();
+
+		// async orders
+		of(this.getOrders()).subscribe(orders => {
+			this.ordersData = orders;
+			this.addCheckboxes();
+		});
+
+		//synchronous orders
+		//this.ordersData = this.getOrders();
+		//this.addCheckboxes();
+		console.log('constructor search-index.component cargado correctamente!!');
 	}
 
-	getServicios(){
+	goBack() {
+		this.util.goBack();
+	}
+
+	private addCheckboxes() {
+		this.ordersData.forEach((o, i) => {
+			const control = new FormControl(o.selected === true); // if (i === 3) first item set to true, else false
+			(this.formy.controls.orders as FormArray).push(control);
+		});
+	}
+
+	getOrders() {
+		// Get the existing data
+		var ItemsServicesChilds = localStorage.getItem('ItemsServicesChilds');
+
+
+		// If no existing data, create an array
+		// Otherwise, convert the localStorage string to an array
+		ItemsServicesChilds = ItemsServicesChilds ? JSON.parse(ItemsServicesChilds) : {};
+
+
+		if (localStorage.hasOwnProperty('ItemsServicesChilds')) {
+			this.checkboxList = JSON.parse(localStorage.getItem('ItemsServicesChilds'));
+			localStorage.removeItem('ItemsServicesChilds');
+		}
+		else {
+			this._router.navigate(['']);
+		}
+
+		//this.getServicios();
+		/*return [
+			{ id: 100, name: 'order 1' , jopo: 'sdf'},
+			{ id: 200, name: 'order 2' },
+			{ id: 300, name: 'order 3' },
+			{ id: 400, name: 'order 4' }
+		];*/
+
+
+
+		return this.checkboxList;
+	}
+
+	submit() {
+		this.checkboxList = [];
+		const selectedOrderIds = this.formy.value.orders
+			.map((v, i) => v ? this.ordersData[i].id : null)
+			.filter(v => v !== null);
+		localStorage.setItem('ItemsServicesChilds', JSON.stringify(this.checkboxList));
+		this._router.navigate(['serach-index']);
+	}
+
+	getServicios() {
 		this._servicioService.getServicios().subscribe(
 			response => {
-				if(response.status == 'success'){
+				if (response.status == 'success') {
 					this.servicios = response.servicios;
+					console.log("termino");
 				}
 			},
 			error => {
+
 				console.log(error);
 			}
 		);
 	}
 
-	
-	deleteServicio(id){
+
+	deleteServicio(id) {
 		this._servicioService.delete(this.token, id).subscribe(
 			response => {
 				// this._router.navigate(['/home']);
@@ -63,4 +151,16 @@ export class SerachIndexComponent implements OnInit{
 		);
 	}
 
+}
+
+function minSelectedCheckboxes(min = 1) {
+	const validator: ValidatorFn = (formArray: FormArray) => {
+		const totalSelected = formArray.controls
+			.map(control => control.value)
+			.reduce((prev, next) => next ? prev + next : prev, 0);
+
+		return totalSelected >= min ? null : { required: true };
+	};
+
+	return validator;
 }

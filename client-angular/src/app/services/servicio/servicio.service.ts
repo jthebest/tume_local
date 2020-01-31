@@ -17,8 +17,8 @@ export class ServicioService {
   }
 
 
-  create(token, servcio: Servicio): Observable<any> {
-    let json = JSON.stringify(servcio);
+  create(token, servicio: Servicio): Observable<any> {
+    let json = JSON.stringify(servicio);
     let params = "json=" + json;
 
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
