@@ -23,6 +23,7 @@ export class SerachIndexComponent implements OnInit {
 
 	public servicios: Array<Servicio>;
 	public token;
+	public serviceRoot;
 
 	formy: FormGroup;
 	ordersData = [];
@@ -41,6 +42,8 @@ export class SerachIndexComponent implements OnInit {
 	) {
 		this.title = 'Inicio';
 		this.token = this._userService.getToken();
+
+		this.serviceRoot = 
 
 		this.formy = this.formBuilder.group({
 			orders: new FormArray([], minSelectedCheckboxes(1))
@@ -79,6 +82,7 @@ export class SerachIndexComponent implements OnInit {
 	private addCheckboxes() {
 		this.ordersData.forEach((o, i) => {
 			const control = new FormControl(o.selected === true); // if (i === 3) first item set to true, else false
+			this.checkboxList.filter(x => x.id == o.id)[0].selected = true;
 			(this.formy.controls.orders as FormArray).push(control);
 		});
 	}
@@ -87,14 +91,16 @@ export class SerachIndexComponent implements OnInit {
 		// Get the existing data
 		var ItemsServicesChilds = localStorage.getItem('ItemsServicesChilds');
 
+	
 
 		// If no existing data, create an array
 		// Otherwise, convert the localStorage string to an array
 		ItemsServicesChilds = ItemsServicesChilds ? JSON.parse(ItemsServicesChilds) : {};
-
+		
 
 		if (localStorage.hasOwnProperty('ItemsServicesChilds')) {
 			this.checkboxList = JSON.parse(localStorage.getItem('ItemsServicesChilds'));
+			this.serviceRoot = this.checkboxList[0].descripcion_padre;
 			localStorage.removeItem('ItemsServicesChilds');
 		}
 		else {
@@ -115,12 +121,19 @@ export class SerachIndexComponent implements OnInit {
 	}
 
 	submit() {
-		this.checkboxList = [];
+		//this.checkboxList = [];
 		const selectedOrderIds = this.formy.value.orders
 			.map((v, i) => v ? this.ordersData[i].id : null)
 			.filter(v => v !== null);
+
+		//array object into array object
+		var filtered = this.checkboxList.filter(function(item) {
+			return selectedOrderIds.indexOf(item.id) !== -1 
+			&& item.id_padre !== null && item.selected === true ;
+		});
+		//console.log(filtered);
 		localStorage.setItem('ItemsServicesChilds', JSON.stringify(this.checkboxList));
-		this._router.navigate(['serach-index']);
+		this._router.navigate(['login']);
 	}
 
 	getServicios() {

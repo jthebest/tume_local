@@ -26,7 +26,13 @@
 				La contraseña no es valida
 			</span>
 		</p>
-
-		<input type="submit" value="Entrar" class="btn btn-primary" [disabled]="!loginFormy.form.valid" />
+		<div class="pull-left">
+			<button class="btn btn-primary"   [disabled]="!loginFormy.form.valid">Entrar
+			</button>
+		</div>
+		<div class="pull-right">
+			<a [routerLink]="['/registro']" >Registrarse</a>
+		</div>
+		<!--input type="submit" value="Entrar" class="btn btn-primary" [disabled]="!loginFormy.form.valid" /-->
 	</form>
 </div>

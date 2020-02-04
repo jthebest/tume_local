@@ -37,8 +37,8 @@
 					<div class="separator-2 mb-20"></div>
 				</div>
 
-				<div class="col-md-offset-3 col-md-6" *ngIf="checkboxList">
-					<h3 class="title-color"><strong> {{ checkboxList[0].descripcion_padre }} </strong></h3>
+				<div class="col-md-offset-3 col-md-6" *ngIf="serviceRoot">
+					<h3 class="title-color"><strong> {{ serviceRoot }} </strong></h3>
 				</div>
 
 
@@ -54,7 +54,7 @@
 						<div *ngIf="!formy.valid">Almenos seleccione un servicio</div>
 						<br>
 						<div class="pull-left">
-							<a href="javascript:void(0)" (click)="goBack()" class="btn btn-info">regresar</a>
+							<a href="javascript:void(0)" (click)="goBack()" >regresar</a>
 						</div>
 						<div class="pull-right">
 							<button class="btn btn-info"   [disabled]="!formy.valid">Siguiente
