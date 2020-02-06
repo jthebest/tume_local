@@ -61,7 +61,7 @@ export class SerachIndexComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		//this.getServicios();
+		this.getServicios();
 
 		// async orders
 		of(this.getOrders()).subscribe(orders => {

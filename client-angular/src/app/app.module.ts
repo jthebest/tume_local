@@ -19,6 +19,7 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { NavHeaderComponent } from './components/nav-header/nav-header.component';
 import { CarouselIndexComponent } from './components/carousel-index/carousel-index.component';
 import { MultiservicesDropdownComponent } from './components/multiservices-dropdown/multiservices-dropdown.component';
+import { MultiservicioschekComponent } from './components/multiservicioschek/multiservicioschek.component';
 import { AgmComponent } from './components/agm/agm.component';
 import { AgmCoreModule } from '@agm/core';
 import { SerachIndexComponent } from './components/serach-index/serach-index.component';
@@ -42,6 +43,7 @@ import { GeneralComponent } from './components/tools/general/general.component';
     NavHeaderComponent,
     CarouselIndexComponent,
     MultiservicesDropdownComponent,
+    MultiservicioschekComponent,
     AgmComponent,
     SerachIndexComponent,
     SerachResultComponent,
