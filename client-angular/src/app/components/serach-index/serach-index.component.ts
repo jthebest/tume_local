@@ -23,6 +23,7 @@ export class SerachIndexComponent implements OnInit {
 
 	public servicios: Array<Servicio>;
 	public token;
+	public identity;
 	public serviceRoot;
 
 	formy: FormGroup;
@@ -42,6 +43,7 @@ export class SerachIndexComponent implements OnInit {
 	) {
 		this.title = 'Inicio';
 		this.token = this._userService.getToken();
+		this.identity = this._userService.getIdentity();
 
 		this.serviceRoot = 
 
@@ -133,7 +135,13 @@ export class SerachIndexComponent implements OnInit {
 		});
 		//console.log(filtered);
 		localStorage.setItem('ItemsServicesChilds', JSON.stringify(this.checkboxList));
+		
+		if(this.identity == null ) {
 		this._router.navigate(['login']);
+		}
+		else{
+			this._router.navigate(['']);	
+		}
 	}
 
 	getServicios() {
