@@ -25,6 +25,7 @@ import { AgmCoreModule } from '@agm/core';
 import { SerachIndexComponent } from './components/serach-index/serach-index.component';
 import { SerachResultComponent } from './components/serach-result/serach-result.component';
 import { GeneralComponent } from './components/tools/general/general.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 // Bootrstrap
 //import { AlertModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -47,7 +48,8 @@ import { GeneralComponent } from './components/tools/general/general.component';
     AgmComponent,
     SerachIndexComponent,
     SerachResultComponent,
-    GeneralComponent
+    GeneralComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

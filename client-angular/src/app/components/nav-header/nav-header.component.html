@@ -11,13 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" a [routerLink]="['']">Inicio 
+          <a class="nav-link"  [routerLink]="['']">Inicio 
             <i class="fa fa-home pr-10"></i>
           </a>
           
         </li>
         <li class="nav navbar-nav navbar-right"   *ngIf="identity">
-          <a class="nav-link" a [routerLink]="['crear-coche']">Crear Coche</a>
+          <a class="nav-link"  [routerLink]="['crear-coche']">Crear Coche</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right" *ngIf="!identity">

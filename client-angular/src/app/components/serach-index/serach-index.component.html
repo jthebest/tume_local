@@ -10,7 +10,7 @@
 						type="search" placeholder="Search" aria-label="Search" disabled>
 				</div>
 			</form>
-			<div class="container bg-lighgray-re">
+			<div class="container bg-lighgray-re text-center">
 				<table class="table table-hover table-stripped" id="servicios-list" style="display:none">
 					<tr>
 						<th class="col-md-7">Lista serach index primer path</th>
@@ -28,16 +28,14 @@
 						</td>
 					</tr>
 				</table>
-				<div class="col-md-offset-3 col-md-8">
-					<h1 class="page-title title-color ">Qu&eacute; servicios necesita
-						contratar?</h1>
-					<p>Luego Ud. puede modificar &eacute;stas opciones.</p>
+				<div class="col-md-offset-3 col-md-12 ">
+						<p>Puede seleccionar las siguientes opciones:</p>
 					<div class="separator-2 mb-20"></div>
 				</div>
-				<div class="col-md-offset-3 col-md-6" *ngIf="serviceRoot">
+				<div class="col-md-offset-3 col-md-12" *ngIf="serviceRoot">
 					<h3 class="title-color"><strong> {{ serviceRoot }} </strong></h3>
 				</div>
-				<div class="col-md-offset-3 col-md-6 box-one">
+				<div class=" d-flex justify-content-center box-one text-left">
 					<form [formGroup]="formy" (ngSubmit)="submit()">
 						<div class="form-check" *ngFor="let order of formy.controls.orders.controls; let i = index">
 							<label formArrayName="orders" class="form-check-label" for="check{{ordersData[i].id}}">
@@ -58,10 +56,10 @@
 					</form>
 				</div>
 			</div>
-			<div class="col-md-offset-3 col-md-6 select-error">
+			<div class="d-flex justify-content-center text select-error">
 				<p>
 					** Si eres una empresa, registrate con tu correo corporativo y los datos de la persona encargada,
-					luego completa los datos en t&uacute; perfil
+					luego completa los datos
 				</p>
 			</div>
 		</div>
