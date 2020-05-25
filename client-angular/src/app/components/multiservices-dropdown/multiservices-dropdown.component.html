@@ -15,7 +15,8 @@
                         <div >
                             <form #loginFormy="ngForm" (ngSubmit)="onSubmit(loginFormy)">
                                 <ng-multiselect-dropdown [placeholder]="'Que servicio necesitas?'"
-                                    [data]="dropdownList" [(ngModel)]="selectedItems" [settings]="dropdownSettings"
+                                    [settings]="dropdownSettings"
+                                    [data]="dropdownList" [(ngModel)]="selectedItems" 
                                     (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)"
                                     [ngModelOptions]="{standalone: true}">
                                 </ng-multiselect-dropdown>
