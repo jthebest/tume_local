@@ -26,6 +26,7 @@ import { SerachIndexComponent } from './components/serach-index/serach-index.com
 import { SerachResultComponent } from './components/serach-result/serach-result.component';
 import { GeneralComponent } from './components/tools/general/general.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Bootrstrap
 //import { AlertModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -62,7 +63,8 @@ import { FooterComponent } from './components/footer/footer.component';
       // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
       apiKey: 'AIzaSyA9y9Vz5hHI-eFzckvkuBfr7kh1gRby1NE'
     }),
-    NgMultiSelectDropDownModule.forRoot() //,
+    NgMultiSelectDropDownModule.forRoot(),
+    FontAwesomeModule //,
 //    AlertModule.forRoot(),
  //   BrowserAnimationsModule,
 //    CollapseModule.forRoot(),
