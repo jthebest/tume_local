@@ -320,6 +320,10 @@ tbody {
 
 .footer-content {
   padding: 20px 0;
+  display: block;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .subfooter {
@@ -6058,6 +6062,7 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 
 #logo-footer {
   margin-bottom: 20px;
+  display: unset;
 }
 
 .site-slogan {
@@ -6340,6 +6345,19 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 .btn.linkedin {
   background-color: #0976b4;
   border-color: #0976b4;
+  color: #ffffff;
+}
+
+.social-links.animated-effect-1 li.whatsapp a:hover {
+  border-color: #82c91e;
+}
+
+.social-links:not(.animated-effect-1) li.whatsapp a:hover,
+.colored.social-links li.whatsapp a,
+.social-links.animated-effect-1 li.whatsapp a:after,
+.btn.whatsapp {
+  background-color: #82c91e;
+  border-color: #82c91e;
   color: #ffffff;
 }
 
