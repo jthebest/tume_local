@@ -16,20 +16,21 @@
 
 Route::group(['middleware' => ['cors']], function () {
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+ //   Route::get('/', function () {
+  //      return view('welcome');
+ //   });
 
     Route::post('/api/register', 'UserController@register');
     Route::post('/api/login', 'UserController@login');
     Route::resource('/api/cars', 'CarController');
     Route::resource('/api/servicios', 'ServicioController');
+  //  Route::get('clearapplicationcache', 'BrowserCacheController');
 });
 
 
-
+//Route::get('/clear-cache', function(){
+//	$code = Artisan::call('cache:clear');
+//});
 
 // Cache
-Route::get('/clear-cache', function(){
-	$code = Artisan::call('cache:clear');
-});
+

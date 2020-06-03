@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ciudad extends Model
+class Ciudad extends Model
 {
-    protected $table = 'ciudad';
+    protected $table = 'Ciudad';
 
 }

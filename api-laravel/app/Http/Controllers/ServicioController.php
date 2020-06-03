@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Helpers\JwtAuth;
-use App\Servicio;
+use App\Model\Servicio;
 
 class ServicioController extends Controller
 {
