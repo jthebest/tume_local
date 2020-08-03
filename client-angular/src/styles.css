@@ -23,6 +23,14 @@
  */
 /* 1 Elements
 ----------------------------------------------------------------------------- */
+:root {
+  --webkit-linear-gradient: -webkit-linear-gradient(right, #7d2e8f, #00c6ff);
+  --color-active: #495057;
+  --border-color-active: #fff;
+}
+
+
+
 body.canvas-sliding,
 body.canvas-slid {
   overflow-x: hidden;

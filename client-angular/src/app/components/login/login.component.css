@@ -1,0 +1,98 @@
+.body  {
+background-color: #0062cc;
+background-repeat: repeat-x;
+background-position: right top;
+background-attachment: fixed;
+background-color: #b12222; 
+}
+
+
+
+
+.btnContactSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+    margin-right: 6%;
+    background-color: white;
+    color: blue;
+    margin-top: 4%;
+}
+
+ .register .loli {
+    background-color: #0062cc;
+    background-repeat: repeat-x;
+    background-position: right top;
+    background-attachment: fixed;
+    background-color: #b12222;
+}
+
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.text-align{
+    margin-top: -3%;
+    margin-bottom: -9%;
+
+    padding: 5%;
+    margin-left: 30%;
+}
+.form-new{
+    margin-right: 22%;
+    margin-left: 20%;
+}
+.register-heading{
+    margin-left: 45%;
+    margin-bottom: 1%;
+    color: #e9ecef;
+}
+.register-heading h1{
+    margin-left: 45%;
+    margin-bottom: 1%;
+    color: #e9ecef;
+}
+.btnLoginSubmit{
+    border: none;
+    padding: 2%;
+    width: 25%;
+    cursor: pointer;
+    background: #29abe2;
+    color: #fff;
+}
+.btnForgetPwd{
+    cursor: pointer;
+    margin-right: 5%;
+    color: #f8f9fa;
+}
+.register{
+    background: var(--webkit-linear-gradient);
+    margin-top: 3%;
+    padding: 3%;
+    border-radius: 2.5rem;
+}
+.nav-tabs .nav-link{
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: white;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color :var(--color-active);
+    background: var(--webkit-linear-gradient);
+    border-color: var(--border-color-active);
+}
+
+.div-vertical {
+    float: center;
+    justify-content: space-between;
+    color: #f8f9fa;
+    flex-flow: row;
+ 
+  }
+

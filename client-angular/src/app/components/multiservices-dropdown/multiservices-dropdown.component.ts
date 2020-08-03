@@ -78,7 +78,7 @@ export class MultiservicesDropdownComponent implements OnInit {
             searchPlaceholderText: 'Escribe aqui',
             noDataAvailablePlaceholderText: 'No data available',
             disabledField: 'isDisabled',
-            maxHeight: 100,
+            maxHeight: 200,
             standalone: true,
             // limitSelection: 1
             //selectAllText: 'Select All',

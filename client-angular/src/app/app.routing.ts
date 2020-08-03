@@ -19,8 +19,8 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 const appRoutes: Routes = [
 	//{path:'', component: DefaultComponent},
 	//	{path:'', component: MultiservicesDropdownComponent},
-	{
-		path: '', children: [
+	{ path: '', 
+		children: [
 			{ path: '', outlet: 'seccion1', component: CarouselIndexComponent },
 			{ path: '', outlet: 'seccion2', component: MultiservicesDropdownComponent },
 		]

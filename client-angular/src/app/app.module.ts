@@ -6,6 +6,13 @@ import { routing, appRoutingProviders } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
 import { FilterPipe } from './pipes/filter.pipe';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AgmCoreModule } from '@agm/core'
+
+//carbasic
+import { CarNewComponent } from './components/car-new/car-new.component';
+import { CarEditComponent } from './components/car-edit/car-edit.component';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
 
 // Componentes
@@ -13,20 +20,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DefaultComponent } from './components/default/default.component';
-import { CarNewComponent } from './components/car-new/car-new.component';
-import { CarEditComponent } from './components/car-edit/car-edit.component';
-import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { NavHeaderComponent } from './components/nav-header/nav-header.component';
 import { CarouselIndexComponent } from './components/carousel-index/carousel-index.component';
 import { MultiservicesDropdownComponent } from './components/multiservices-dropdown/multiservices-dropdown.component';
 import { MultiservicioschekComponent } from './components/multiservicioschek/multiservicioschek.component';
 import { AgmComponent } from './components/agm/agm.component';
-import { AgmCoreModule } from '@agm/core';
 import { SerachIndexComponent } from './components/serach-index/serach-index.component';
 import { SerachResultComponent } from './components/serach-result/serach-result.component';
 import { GeneralComponent } from './components/tools/general/general.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 // Bootrstrap
 //import { AlertModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';

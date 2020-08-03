@@ -1,38 +1,132 @@
-<div class="col-md-12">
-	<h2>{{title}}</h2>
-
-	<div class="alert alert-success" *ngIf="status == 'success'">
-		Te has identificado correctamente !!
-	</div>
-
-	<div class="alert alert-danger" *ngIf="status == 'error'">
-		No te has identificado !!
-	</div>
-
-	<form #loginFormy="ngForm" (ngSubmit)="onSubmit(loginFormy)" class="col-md-5">
-
-		<p>
-			<label for="email">Email</label>
-			<input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" required class="form-control"/>
-			<span *ngIf="!email.valid && email.touched">
-				El email no es válido
-			</span>
-		</p>
-
-		<p>
-			<label for="password">Contraseña</label>
-			<input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required class="form-control"/>
-			<span *ngIf="!password.valid && password.touched">
-				La contraseña no es valida
-			</span>
-		</p>
-		<div class="pull-left">
-			<button class="btn btn-primary"   [disabled]="!loginFormy.form.valid">Entrar
-			</button>
+<div class="register container " style="background-color: #b12222;">
+	<div class="col-md-offset-3 col-md-12 text-center ">
+		<div class="alert alert-info" *ngIf="status == 'success'">
+			Te has identificado correctamente !!
 		</div>
-		<div class="pull-right">
-			<a [routerLink]="['/registro']" >Registrarse</a>
+		<div class="alert alert-info" *ngIf="status == 'error'">
+			No te has identificado !!
 		</div>
-		<!--input type="submit" value="Entrar" class="btn btn-primary" [disabled]="!loginFormy.form.valid" /-->
-	</form>
+	</div>
+	<div class="row">
+		<div class="col-md-12 ">
+			<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="profesional-tab" data-toggle="tab" href="#profesional" role="tab"
+						aria-controls="profesional" aria-selected="true">Profesional
+						<i class=" fa fa-graduation-cap fa-1x"> </i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="contratar-tab" data-toggle="tab" href="#contratar" role="tab"
+						aria-controls="contratar" aria-selected="false">
+						Contratar <i class="far fa-handshake fa-1x " aria-hidden="true"></i></a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active text-align form-new " id="profesional" role="tabpanel"
+					aria-labelledby="profesional-tab">
+					<h3 class="register-heading "> <i class=" fa fa-graduation-cap fa-2x"> </i> </h3>
+					<div class="col-md-12">
+						<form #loginFormy="ngForm" (ngSubmit)="onSubmit(loginFormy)">
+							<div class="form-group ">
+								<div class=" align-self-center div-vertical row">
+									<i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+									<input type="email" name="email" #email="ngModel" [(ngModel)]="user.email"
+										class="form-control" placeholder="Su correo *" value="" autocomplete="off"
+										required />
+								</div>
+								<div class="alert alert-primary d-flex justify-content-between"
+									*ngIf="!email.valid && email.touched">
+									<div>
+										<span>
+											El email no es válido!
+										</span>
+									</div>
+									<div>
+										<i class="fa fa-window-close " aria-hidden="true"></i>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class=" align-self-center div-vertical row">
+									<i class="fa fa-key fa-2x" aria-hidden="true"></i>
+									<input type="password" name="password" #password="ngModel"
+										[(ngModel)]="user.password" class="form-control" placeholder="Su Constraseña *"
+										value="" autocomplete="off" required />
+								</div>
+								<div class="alert alert-primary d-flex justify-content-between"
+									*ngIf="!password.valid && password.touched">
+									<div>
+										<span>
+											La contraseña no es valida!
+										</span>
+									</div>
+									<div>
+										<i class="fa fa-window-close  " aria-hidden="true"></i>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<input type="submit" value="Entrar" class="btn btnContactSubmit"
+									[disabled]="!loginFormy.form.valid" />
+								<a [routerLink]="['/registro']">Olvido_Contraseña?</a>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="tab-pane fade show text-align form-new" id="contratar" role="tabpanel"
+					aria-labelledby="contratar-tab">
+					<h3 class="register-heading"> <i class="far fa-handshake fa-2x" aria-hidden="true"></i></h3>
+					<div class="row register-form">
+						<div class="col-md-12">
+							<form #loginFormy="ngForm" (ngSubmit)="onSubmit(loginFormy)">
+								<div class="form-group ">
+									<div class=" align-self-center div-vertical row">
+										<i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+										<input type="email" name="email" #email="ngModel" [(ngModel)]="user.email"
+											class="form-control" placeholder="Su correo *" value="" autocomplete="off"
+											required />
+									</div>
+									<div class="alert alert-primary d-flex justify-content-between"
+										*ngIf="!email.valid && email.touched">
+										<div>
+											<span>
+												El email no es válido!
+											</span>
+										</div>
+										<div>
+											<i class="fa fa-window-close " aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class=" align-self-center div-vertical row">
+										<i class="fa fa-key fa-2x" aria-hidden="true"></i>
+										<input type="password" name="password" #password="ngModel"
+											[(ngModel)]="user.password" class="form-control"
+											placeholder="Su Constraseña *" value="" autocomplete="off" required />
+									</div>
+									<div class="alert alert-primary d-flex justify-content-between"
+										*ngIf="!password.valid && password.touched">
+										<div>
+											<span>
+												La contraseña no es valida!
+											</span>
+										</div>
+										<div>
+											<i class="fa fa-window-close " aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type="submit" value="Entrar" class="btn btnContactSubmit"
+										[disabled]="!loginFormy.form.valid" />
+									<a [routerLink]="['/registro']">Olvido_Contraseña?</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
